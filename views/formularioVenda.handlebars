@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTOKEY - Cadastro de Venda</title>
+
+    <!-- Chamar os arquivos externos -->
+    <link rel="stylesheet" type="text/css" href="css/formulario_venda.css">
+
+</head>
+
+<body>
+    <h1>Cadastro de Venda</h1>
+    <div>
+        <a href="/"><button class="botao-inicial">Tela inicial</button></a>
+        <a href="/consultaVenda"><button class="botao-cadastrar-produto">Consulta Vendas</button></a>
+    </div> 
+
+    <form action="/tbl_venda" method="POST">
+        <div>
+            <label for="dataVenda">Data da Venda:</label>
+            <input type="date" id="dataVenda" name="dataVenda">
+        </div>
+
+        <div>
+            <label for="descProduto">Produto:</label>
+            <input type="text" id="descProduto" name="descProduto" list="produtos" placeholder="Digite o nome do produto" required>
+            <datalist id="produtos"></datalist>
+        </div>
+
+        <div>
+            <label for="valVendaProduto">Valor de Venda:</label>
+            <input type="text" id="valVendaProduto" name="valVendaProduto" step="0.01">
+        </div>
+        
+        <div>
+            <label for="qntVendaProduto">Quantidade:</label>
+            <input type="number" id="qntVendaProduto" name="qntVendaProduto" required>
+        </div>
+
+        <div>
+            <label for="totalPedidoVenda">Total do Pedido:</label>
+            <input type="number" id="totalPedidoVenda" name="totalPedidoVenda" step="0.01" readonly>
+        </div>
+
+        <div>
+            <label for="descontoVenda">Desconto:</label>
+            <input type="number" id="descontoVenda" name="descontoVenda" step="0.01">
+        </div>
+
+        <div>
+            <label for="totalPagoVenda">Total Pago:</label>
+            <input type="number" id="totalPagoVenda" name="totalPagoVenda" step="0.01" readonly>
+        </div>
+
+        <div>
+            <label for="formaPagVenda">Forma de Pagamento:</label>
+            <select id="formaPagVenda" name="formaPagVenda" required>
+                <option value="CARTÃO">CARTÃO</option>
+                <option value="DINHEIRO">DINHEIRO</option>
+                <option value="PIX">PIX</option>
+            </select>
+        </div>
+
+        <button type="submit">Salvar Venda</button>
+    </form>
+
+    <!-- Script para preencher automaticamente os campos -->
+    <script>
+        function calcularTotal() {
+            let valorVenda = parseFloat(document.getElementById("valVendaProduto").value) || 0;
+            let qntVenda = parseFloat(document.getElementById("qntVendaProduto").value) || 0;
+            let desconto = parseFloat(document.getElementById("descontoVenda").value) || 0;
+
+            let totalSemDesconto = valorVenda * qntVenda;
+            let totalComDesconto = totalSemDesconto - desconto;
+
+            document.getElementById("totalPedidoVenda").value = totalSemDesconto.toFixed(2);
+            document.getElementById("totalPagoVenda").value = totalComDesconto.toFixed(2);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("qntVendaProduto").addEventListener("input", calcularTotal);
+            document.getElementById("descontoVenda").addEventListener("input", calcularTotal);
+        });
+
+        // Preenchimento automático do preço ao selecionar um produto
+        document.getElementById('descProduto').addEventListener('input', function() {
+            const termoBusca = this.value;
+            if (termoBusca.length >= 2) {
+                fetch(`/buscar-produto?q=${encodeURIComponent(termoBusca)}`)
+                    .then(response => response.json())
+                    .then(produtos => {
+                        const listaProdutos = document.getElementById('produtos');
+                        listaProdutos.innerHTML = ''; 
+
+                        produtos.forEach(produto => {
+                            const option = document.createElement('option');
+                            option.value = produto.descricao_produto;
+                            listaProdutos.appendChild(option);
+                        });
+
+                        // Se um único produto for encontrado, preencher o preço automaticamente
+                        if (produtos.length === 1) {
+                            document.getElementById("valVendaProduto").value = produtos[0].valor_bruto_venda_produto;
+                            calcularTotal();
+                        }
+                    })
+                    .catch(error => console.error('Erro ao buscar produtos:', error));
+            }
+        });
+
+        // Atualizar o valor de venda ao confirmar um produto
+        document.getElementById('descProduto').addEventListener('change', function() {
+            const produtoSelecionado = this.value;
+            fetch(`/buscar-produto?q=${encodeURIComponent(produtoSelecionado)}`)
+                .then(response => response.json())
+                .then(produtos => {
+                    if (produtos.length === 1) {
+                        document.getElementById("valVendaProduto").value = produtos[0].valor_bruto_venda_produto;
+                        calcularTotal();
+                    }
+                })
+                .catch(error => console.error('Erro ao buscar preço do produto:', error));
+        });
+    </script>
+</body>
+</html>

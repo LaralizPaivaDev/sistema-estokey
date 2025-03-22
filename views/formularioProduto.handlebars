@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTOKEY - Cadastro de produtos</title>
+
+    <!-- Chamar os arquivos externos -->
+    <link rel="stylesheet" type="text/css" href="css/formulario_produto.css">
+
+</head>
+
+<body>
+    <header>
+             
+    </header>
+
+    <main>
+        <div class="box">
+            <form action="tbl_produto" method="post">
+                <fieldset>
+
+                    <legend><b>Cadastro de Produtos</b></legend>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="descProduto" id="descricao" class="inputUser" required>
+                        <label for="descricao" class="labelInput">Descrição do Produto</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" name="catProduto" id="categoria" class="inputUser" required>
+                        <label for="categoria" class="labelInput">Categoria</label>
+                    </div>     
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" name="valorCompraProduto" id="valorCompra" class="inputUser" required>
+                        <label for="valorCompra" class="labelInput">Valor de Compra</label>
+                    </div> 
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" name="valorBrutoVendaProduto" id="valorBruto" class="inputUser" required>
+                        <label for="valorBruto" class="labelInput">Valor de Venda (Bruto)</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" name="quantidadeProduto" id="qtdeProduto" class="inputUser" required>
+                        <label for="qtdeProduto" class="labelInput">Quantidade</label>
+                    </div>
+                    <br><br>
+                    <br>                  
+                    
+                    <input type="submit" name="submit" id="button-cadastrar" value="CadastroProduto">   
+                    
+                </fieldset>              
+            </form>
+        </div>
+        <div>
+            <a href="/" type="submit"><button class = "botao-inicial">Tela inicial</button></a>
+            <a href="/consultaProduto" type="submit"><button class = "botao-consulta">Consulta de Produtos</button></a>
+        </div>       
+    </main>
+    </body>
+</html>
