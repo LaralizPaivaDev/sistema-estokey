@@ -14,7 +14,6 @@ const Sequelize = require("sequelize");
 //port: '45429'
 //})
 
-/*
 // Configuração da conexão com o banco de dados MySQL
 const sequelize = new Sequelize(
   "railway",
@@ -30,22 +29,6 @@ const sequelize = new Sequelize(
     dialect: "mysql",
     dialectModule: mysql2,
     port: "18118",
-  }
-);*/
-
-// Configuração da conexão com o banco de dados MySQL usando variáveis de ambiente
-const sequelize = new Sequelize(
-  process.env.railway, // Nome do banco de dados
-  process.env.root, // Usuário do banco
-  process.env.GYDOVyIMKnlNsIVFdYiemzKvThOSpaLb, // Senha do banco
-  {
-    host: process.env.mysql.railway.internal, // Host do banco de dados
-    dialect: "mysql",
-    dialectModule: mysql2, // Usando o mysql2 como dialect
-    port: process.env.MYSQL_PORT || 3306 || 18118, // Porta padrão do MySQL (caso a variável não esteja definida)
-    define: {
-      timestamps: false, // Retirando as colunas createAt e updateAt
-    },
   }
 );
 
