@@ -318,6 +318,9 @@ app.post("/tbl_venda", async (req, res) => {
     // Insere a data atual da venda
     const dataVenda = new Date().toLocaleDateString("en-CA");
 
+    // Verifica se o desconto foi preenchido, caso contrário, atribui 0
+    descontoVenda = descontoVenda || 0;
+
     // Criar a venda no banco de dados
     await Venda.create({
       data_venda: dataVenda,
