@@ -84,8 +84,8 @@ app.get("/deletar/:pk_produto", (req, res) => {
 // Rota para salvar um novo produto
 app.post("/tbl_produto", (req, res) => {
   Produto.create({
-    descricao_produto: req.body.descProduto,
-    categoria_produto: req.body.catProduto,
+    descricao_produto: req.body.descProduto.toUpperCase(),
+    categoria_produto: req.body.catProduto.toUpperCase(),
     valor_compra_produto: req.body.valorCompraProduto,
     valor_bruto_venda_produto: req.body.valorBrutoVendaProduto,
     quantidade_produto: req.body.quantidadeProduto,
