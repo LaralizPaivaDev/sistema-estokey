@@ -34,7 +34,7 @@ const Venda = conexao.sequelize.define(
     },
     desconto_venda: {
       type: conexao.Sequelize.DOUBLE,
-      allowNull: false,
+      allowNull: true,
     },
     total_pago_venda: {
       type: conexao.Sequelize.DOUBLE,
@@ -59,7 +59,7 @@ Venda.belongsTo(produto, {
 });
 
 // Sincronizando a tabela de vendas
-Venda.sync({ force: false }) // Use `force: false` se não quiser recriar a tabela em cada execução
+Venda.sync({ force: true }) // Use `force: false` se não quiser recriar a tabela em cada execução
   .then(() => {
     console.log("Tabela 'tbl_venda' criada/recriada com sucesso!");
   })
