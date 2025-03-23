@@ -13,7 +13,7 @@ const Venda = conexao.sequelize.define(
       allowNull: false,
     },
     data_venda: {
-      type: conexao.Sequelize.DATE,
+      type: conexao.Sequelize.DATEONLY,
       allowNull: false,
     },
     fk_produto: {
