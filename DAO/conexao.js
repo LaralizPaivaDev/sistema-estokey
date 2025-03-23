@@ -28,7 +28,7 @@ const sequelize = new Sequelize(
     host: "mysql.railway.internal",
     dialect: "mysql",
     dialectModule: mysql2,
-    port: "18118",
+    port: "3306",
   }
 );
 
