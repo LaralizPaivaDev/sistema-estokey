@@ -319,10 +319,7 @@ app.post("/tbl_venda", async (req, res) => {
     const moment = require("moment"); // Biblioteca para manipulação de datas
 
     // Se o usuário não informar a data, usa a data atual
-    dataVenda = dataVenda || new Date().toISOString().split("T")[0]; // Formato YYYY-MM-DD
-
-    // Definindo a data de venda no formato brasileiro (DD/MM/YYYY)
-    dataVenda = moment().format("DD/MM/YYYY");
+    dataVenda = dataVenda || moment().format("YYYY-MM-DD");
 
     // Criar a venda no banco de dados
     await Venda.create({
