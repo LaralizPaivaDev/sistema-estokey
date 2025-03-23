@@ -283,7 +283,6 @@ app.get("/buscar-produto", async (req, res) => {
 app.post("/tbl_venda", async (req, res) => {
   try {
     let {
-      dataVenda,
       descProduto,
       qntVendaProduto,
       totalPedidoVenda,
@@ -317,7 +316,7 @@ app.post("/tbl_venda", async (req, res) => {
     );
 
     // Se o usuário não informar a data, usa a data atual
-    dataVenda = dataVenda || new Date().toISOString().split("T")[0]; // Formato YYYY-MM-DD
+    const dataVenda = new Date().toISOString().split("T")[0];
 
     // Criar a venda no banco de dados
     await Venda.create({
