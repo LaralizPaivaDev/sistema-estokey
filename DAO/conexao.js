@@ -22,7 +22,7 @@ const sequelize = new Sequelize(
   {
     //timestamps - retirada da criacao automatica das colunas createAt e updatedAt
     define: {
-      timestamps: false,
+      timestamps: true,
       //mysql://root:GYDOVyIMKnlNsIVFdYiemzKvThOSpaLb@ballast.proxy.rlwy.net:18118/railway
     },
     host: "mysql.railway.internal",
