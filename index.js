@@ -316,10 +316,8 @@ app.post("/tbl_venda", async (req, res) => {
       { where: { pk_produto: produto.pk_produto } }
     );
 
-    const moment = require("moment"); // Biblioteca para manipulação de datas
-
     // Se o usuário não informar a data, usa a data atual
-    dataVenda = dataVenda || moment().format("YYYY-MM-DD");
+    dataVenda = dataVenda || new Date().toLocaleDateString("en-CA"); // Formato YYYY-MM-DD
 
     // Criar a venda no banco de dados
     await Venda.create({
