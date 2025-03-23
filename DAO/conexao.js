@@ -35,14 +35,14 @@ const sequelize = new Sequelize(
 
 // Configuração da conexão com o banco de dados MySQL usando variáveis de ambiente
 const sequelize = new Sequelize(
-  process.env.MYSQL_DATABASE, // Nome do banco de dados
-  process.env.MYSQL_USER, // Usuário do banco
-  process.env.MYSQL_PASSWORD, // Senha do banco
+  process.env.railway, // Nome do banco de dados
+  process.env.root, // Usuário do banco
+  process.env.GYDOVyIMKnlNsIVFdYiemzKvThOSpaLb, // Senha do banco
   {
-    host: process.env.MYSQL_HOST, // Host do banco de dados
+    host: process.env.mysql.railway.internal, // Host do banco de dados
     dialect: "mysql",
     dialectModule: mysql2, // Usando o mysql2 como dialect
-    port: process.env.MYSQL_PORT || 3306, // Porta padrão do MySQL (caso a variável não esteja definida)
+    port: process.env.MYSQL_PORT || 3306 || 18118, // Porta padrão do MySQL (caso a variável não esteja definida)
     define: {
       timestamps: false, // Retirando as colunas createAt e updateAt
     },
