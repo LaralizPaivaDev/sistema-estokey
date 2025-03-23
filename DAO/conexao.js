@@ -25,7 +25,7 @@ const sequelize = new Sequelize(
       timestamps: false,
       //mysql://root:GYDOVyIMKnlNsIVFdYiemzKvThOSpaLb@ballast.proxy.rlwy.net:18118/railway
     },
-    host: "ballast.proxy.rlwy.net",
+    host: "mysql.railway.internal",
     dialect: "mysql",
     dialectModule: mysql2,
     port: "18118",
