@@ -22,7 +22,7 @@ const Venda = conexao.sequelize.define(
       allowNull: false,
     },
     fk_valor_venda_produto: {
-      type: conexao.Sequelize.INTEGER,
+      type: conexao.Sequelize.DOUBLE,
       allowNull: false,
     },
     quantidade_venda_produto: {
@@ -56,6 +56,13 @@ Venda.belongsTo(produto, {
   as: "tbl_produto",
 });
 
-//Post.sync({ force: true });
+// Sincronizando a tabela de vendas
+Venda.sync({ force: false }) // Use `force: false` se não quiser recriar a tabela em cada execução
+  .then(() => {
+    console.log("Tabela 'tbl_venda' criada/recriada com sucesso!");
+  })
+  .catch((erro) => {
+    console.error("Erro ao criar a tabela 'tbl_venda': ", erro);
+  });
 
 module.exports = Venda;
