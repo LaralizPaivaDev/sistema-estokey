@@ -8,6 +8,27 @@
     <!-- Chamar os arquivos externos -->
     <link rel="stylesheet" type="text/css" href="css/formulario_venda.css">
 
+    <style>
+        /* Garantir que o input ocupe toda a largura disponível */
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Adicionar uma margem para tornar o layout mais agradável */
+        form div {
+            margin-bottom: 16px;
+        }
+
+        /* Ajustar o tamanho da fonte para dispositivos móveis */
+        @media (max-width: 600px) {
+            input[type="text"], input[type="number"], select {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -88,16 +109,17 @@
         // Preenchimento automático do preço ao selecionar um produto
         document.getElementById('descProduto').addEventListener('input', function() {
             const termoBusca = this.value;
-            if (termoBusca.length >= 2) {
+            if (termoBusca.length >= 2) {  // Começar a busca após 2 caracteres
                 fetch(`/buscar-produto?q=${encodeURIComponent(termoBusca)}`)
                     .then(response => response.json())
                     .then(produtos => {
                         const listaProdutos = document.getElementById('produtos');
-                        listaProdutos.innerHTML = ''; 
+                        listaProdutos.innerHTML = '';  // Limpar lista anterior
 
+                        // Adicionar novos produtos ao datalist
                         produtos.forEach(produto => {
                             const option = document.createElement('option');
-                            option.value = produto.descricao_produto;
+                            option.value = produto.descricao_produto;  // Descrição do produto
                             listaProdutos.appendChild(option);
                         });
 
