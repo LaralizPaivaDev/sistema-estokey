@@ -24,6 +24,7 @@ const sequelize = new Sequelize(
     define: {
       timestamps: true,
       //mysql://root:GYDOVyIMKnlNsIVFdYiemzKvThOSpaLb@ballast.proxy.rlwy.net:18118/railway
+      //mysql://root:GYDOVyIMKnlNsIVFdYiemzKvThOSpaLb@mysql.railway.internal:3306/railway
     },
     host: "ballast.proxy.rlwy.net",
     dialect: "mysql",
