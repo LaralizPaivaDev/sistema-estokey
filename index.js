@@ -7,6 +7,7 @@ const { engine } = require("express-handlebars");
 const Produto = require("./DAO/produto");
 const Venda = require("./DAO/venda");
 const { Op } = require("sequelize");
+const { format } = require("date-fns");
 const methodOverride = require("method-override");
 
 // Template de engine
@@ -316,7 +317,7 @@ app.post("/tbl_venda", async (req, res) => {
     );
 
     // Se o usuário não informar a data, usa a data atual
-    const dataVenda = new Date().toISOString().split("T")[0];
+    const dataVenda = format(new Date(), "yyyy-MM-dd");
 
     // Criar a venda no banco de dados
     await Venda.create({
