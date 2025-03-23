@@ -7,7 +7,6 @@ const { engine } = require("express-handlebars");
 const Produto = require("./DAO/produto");
 const Venda = require("./DAO/venda");
 const { Op } = require("sequelize");
-const { format } = require("date-fns");
 const methodOverride = require("method-override");
 
 // Template de engine
@@ -204,9 +203,9 @@ app.get("/consultaVenda", async (req, res) => {
       ],
       include: [
         {
-          model: Produto, // Importando de /DAO/produto
+          model: Produto,    // Importando de /DAO/produto
           as: "tbl_produto", // Nome do alias definido na associacao
-          required: true, // INNER JOIN - retorna apenas vendas com produtos existentes
+          required: true,    // INNER JOIN - retorna apenas vendas com produtos existentes
           attributes: ["descricao_produto", "valor_bruto_venda_produto"],
         },
       ],
