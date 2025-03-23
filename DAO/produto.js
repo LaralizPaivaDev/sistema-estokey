@@ -39,7 +39,7 @@ const Produto = conexao.sequelize.define(
 );
 
 // Sincronizando a tabela de produtos
-Produto.sync({ force: true }) // Use `force: false` se não quiser recriar a tabela em cada execução
+Produto.sync({ force: false }) // Use `force: false` se não quiser recriar a tabela em cada execução
   .then(() => {
     console.log("Tabela 'tbl_produto' foi criada/recriada com sucesso!");
   })
