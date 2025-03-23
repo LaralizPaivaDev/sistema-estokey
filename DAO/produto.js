@@ -32,11 +32,14 @@ const Produto = conexao.sequelize.define(
       allowNull: false,
     },
   },
-  { freezeTableName: true } // Impede que o Sequelize altere o nome da tabela
+  {
+    freezeTableName: true, // Impede que o Sequelize altere o nome da tabela
+    timestamps: false, // Desativa a criação automática das colunas createdAt e updatedAt
+  }
 );
 
 // Sincronizando a tabela de produtos
-Produto.sync({ force: false }) // Use `force: false` se não quiser recriar a tabela em cada execução
+Produto.sync({ force: true }) // Use `force: false` se não quiser recriar a tabela em cada execução
   .then(() => {
     console.log("Tabela 'tbl_produto' foi criada/recriada com sucesso!");
   })
