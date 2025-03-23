@@ -317,7 +317,7 @@ app.post("/tbl_venda", async (req, res) => {
     );
 
     // Se o usuário não informar a data, usa a data atual
-    dataVenda = dataVenda || new Date().toLocaleDateString("en-CA"); // Formato YYYY-MM-DD
+    dataVenda = dataVenda || new Date().toISOString().split("T")[0]; // Formato YYYY-MM-DD
 
     // Criar a venda no banco de dados
     await Venda.create({
