@@ -56,6 +56,6 @@ Venda.belongsTo(produto, {
   as: "tbl_produto",
 });
 
-Post.sync({ force: true });
+//Post.sync({ force: true });
 
 module.exports = Venda;

@@ -1,10 +1,8 @@
-// Importando modulos
-const { FOREIGNKEYS } = require("sequelize/lib/query-types");
 const conexao = require("./conexao");
 
-//----------------------- Tela de Produto ---------------------------
+// Definindo o modelo Produto
 const Produto = conexao.sequelize.define(
-  "tbl_produto",
+  "tbl_produto", // Nome da tabela no banco de dados
   {
     pk_produto: {
       type: conexao.Sequelize.INTEGER,
@@ -33,9 +31,16 @@ const Produto = conexao.sequelize.define(
       allowNull: false,
     },
   },
-  { freezeTableName: true }
+  { freezeTableName: true } // Impede que o Sequelize altere o nome da tabela
 );
 
-Post.sync({ force: true });
+// Sincronizando o modelo com o banco de dados
+Produto.sync({ force: true }) // Isso irá apagar e recriar a tabela a cada execução
+  .then(() => {
+    console.log("Tabela 'tbl_produto' foi criada/recriada com sucesso!");
+  })
+  .catch((erro) => {
+    console.error("Erro ao criar a tabela: ", erro);
+  });
 
 module.exports = Produto;
