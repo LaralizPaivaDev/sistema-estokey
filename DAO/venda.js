@@ -59,7 +59,7 @@ Venda.belongsTo(produto, {
 });
 
 // Sincronizando a tabela de vendas
-Venda.sync({ force: true }) // Use `force: false` se não quiser recriar a tabela em cada execução
+Venda.sync({ force: true }) // Use `force: false` se não quiser recriar a tabela em cada execucao
   .then(() => {
     console.log("Tabela 'tbl_venda' criada/recriada com sucesso!");
   })
