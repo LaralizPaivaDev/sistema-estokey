@@ -2,19 +2,7 @@
 const mysql2 = require("mysql2");
 const Sequelize = require("sequelize");
 
-// Configuração da conexão com o banco de dados MySQL
-//const sequelize = new Sequelize('railway', 'root', 'oAOJnWCesZqqRJkmdUaSWCyYEGBfYZzJ', {
-// timestamps - retirada da criacao automatica das colunas createAt e updatedAt
-//define: {
-//    timestamps: false,
-//},
-//host: 'viaduct.proxy.rlwy.net',
-//dialect: 'mysql',
-//dialectModule: mysql2,
-//port: '45429'
-//})
-
-// Configuração da conexão com o banco de dados MySQL
+// Configuração da conexão com o banco de dados MySQL - REMOTO
 const sequelize = new Sequelize(
   "railway",
   "root",
@@ -22,9 +10,8 @@ const sequelize = new Sequelize(
   {
     //timestamps - retirada da criacao automatica das colunas createAt e updatedAt
     define: {
-      timestamps: true,
+      timestamps: false,
       //mysql://root:GYDOVyIMKnlNsIVFdYiemzKvThOSpaLb@ballast.proxy.rlwy.net:18118/railway
-      //mysql://root:GYDOVyIMKnlNsIVFdYiemzKvThOSpaLb@mysql.railway.internal:3306/railway
     },
     host: "ballast.proxy.rlwy.net",
     dialect: "mysql",
@@ -34,7 +21,7 @@ const sequelize = new Sequelize(
 );
 
 /*
-// Configuração da conexão com o banco de dados MySQL
+// Configuração da conexão com o banco de dados MySQL - LOCAL
 const sequelize = new Sequelize('sistema_estokey', 'root', '', {
     // timestamps - retirada da criacao automatica das colunas createAt e updatedAt
     define: {
@@ -51,7 +38,7 @@ const sequelize = new Sequelize('sistema_estokey', 'root', '', {
 sequelize
   .authenticate()
   .then(() => {
-    console.log("Conexão bem sucedida ao banco de dados MySQL");
+    console.log("Conexão bem sucedida ao banco de dados - MySQL");
   })
   .catch((erro) => {
     console.error("Erro ao conectar ao banco de dados: ", erro);

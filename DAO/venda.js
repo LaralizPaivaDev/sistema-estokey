@@ -1,5 +1,4 @@
 // Importando modulos
-const { FOREIGNKEYS } = require("sequelize/lib/query-types");
 const conexao = require("./conexao");
 const produto = require("./produto");
 
