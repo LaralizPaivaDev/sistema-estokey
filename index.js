@@ -316,8 +316,7 @@ app.post("/tbl_venda", async (req, res) => {
       { where: { pk_produto: produto.pk_produto } }
     );
 
-    // Se o usuário não informar a data, usa a data atual
-    //const dataVenda = format(new Date(), "yyyy-MM-dd");
+    // Insere a data atual da venda
     const dataVenda = new Date().toLocaleDateString("en-CA");
 
     // Criar a venda no banco de dados

@@ -47,7 +47,7 @@ const Venda = conexao.sequelize.define(
   },
   {
     freezeTableName: true, // Impede que o Sequelize altere o nome da tabela
-    timestamps: false, // Desativa a criação automática das colunas createdAt e updatedAt
+    timestamps: false, // Desativa a criacao automatica das colunas createdAt e updatedAt
   }
 );
 
@@ -59,7 +59,7 @@ Venda.belongsTo(produto, {
 });
 
 // Sincronizando a tabela de vendas
-Venda.sync({ force: true }) // Use `force: false` se não quiser recriar a tabela em cada execucao
+Venda.sync({ force: false }) // Use `force: false` se não quiser recriar a tabela em cada execucao
   .then(() => {
     console.log("Tabela 'tbl_venda' criada/recriada com sucesso!");
   })
