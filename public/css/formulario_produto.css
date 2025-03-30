@@ -1,0 +1,49 @@
+@import url('header.css');
+
+.btn {
+    position: relative;
+    background: none;
+    border: 0.1em solid;
+    padding: 0.5em 10em;
+    margin: 0.5em;
+    font-size: 1.0em;
+    cursor: pointer;
+    border-radius: 30px;
+    outline: 0;
+    &:hover {
+      background-color: rgb(36, 36, 117);
+      color: white;
+      border-color: white;
+    }
+  }
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10em;
+    height:100vh;
+    background-color: #f0f0f0;
+}
+
+
+.labelInput {
+    display:flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.inputUser{
+    padding: 8.5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
