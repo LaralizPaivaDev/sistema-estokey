@@ -9,9 +9,9 @@
 
 <header>
     <h1>LISTA: PRODUTOS</h1>
-    <div>
-        <a href="/" type="submit" id="botao-inicial"><button class="botao-inicial">Tela inicial</button></a>
-        <a href="/cadastroProduto" type="submit" id="cadastroProduto"><button class="botao-cadastrar-produto">Cadastro de Produto</button></a>
+    <div class="btn-container">
+        <a href="/" type="submit" ><button class="btn">Tela inicial</button></a>
+        <a href="/cadastroProduto" type="submit"><button class="btn">Cadastro de Produto</button></a>
     </div> 
 </header>
 
@@ -24,6 +24,7 @@
             <th>Valor de Compra</th>
             <th>Valor de Venda (Bruto)</th>
             <th>Quantidade</th>
+            <th>Opções</th>
         </tr>
     </thead>   
     <tbody>
@@ -35,8 +36,10 @@
                 <td>{{valor_compra_produto}}</td>
                 <td>{{valor_bruto_venda_produto}}</td>
                 <td>{{quantidade_produto}}</td>
-                <td><a href="/editar/{{pk_produto}}" id="editar"><button class="botao-editar"><i class="fa-solid fa-pencil-alt"></i></button></a></td>
-                <td><a href="/deletar/{{pk_produto}}" id="excluir"><button class="botao-excluir"><i class="fa-solid fa-trash-can"></i></button></a></td>
+                <td class="opcao"><a href="/editar/{{pk_produto}}" id="editar"><button class="botao-editar"><i class="fa-solid fa-pencil-alt"></i></button></a>
+                <a href="/deletar/{{pk_produto}}" id="excluir"><button class="botao-excluir"><i class="fa-solid fa-trash-can"></i></button></a>
+                </td>
+                {{!-- <td><</td> --}}
             </tr>
         {{/each}}            
     </tbody>
