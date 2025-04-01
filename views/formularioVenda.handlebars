@@ -12,58 +12,59 @@
 
 <body>
     <h1>Cadastro de Venda</h1>
-    <div>
-        <a href="/"><button class="botao-inicial">Tela inicial</button></a>
-        <a href="/consultaVenda"><button class="botao-cadastrar-produto">Consulta Vendas</button></a>
+    <div class="btn-container">
+        <a href="/"><button class="btn">Tela inicial</button></a>
+        <a href="/consultaVenda"><button class="btn">Consulta Vendas</button></a>
     </div> 
 
+    <div class="formVenda">
     <form action="/tbl_venda" method="POST">
-        <!--<div>
-            <label for="dataVenda">Data da Venda:</label>
-            <input type="date" id="dataVenda" name="dataVenda">
-        </div>-->
 
-        <div>
-            <label for="descProduto">Produto:</label>
-            <input type="text" id="descProduto" name="descProduto" list="produtos" placeholder="Digite o nome do produto" required autocomplete="off">
-            <datalist id="produtos"></datalist>
+            <div class="inputBox">
+                <label for="descProduto" class="labelInput">Produto:</label>
+                <input type="text" id="descProduto" class="inputUser" name="descProduto" list="produtos" placeholder="Digite o nome do produto" required autocomplete="off">
+                <datalist id="produtos"></datalist>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <label for="valVendaProduto" class="labelInput">Valor de Venda:</label>
+                <input type="text" id="valVendaProduto" class="inputUser" name="valVendaProduto" step="0.01" readonly>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <label for="qntVendaProduto" class="labelInput">Quantidade:</label>
+                <input type="number" id="qntVendaProduto" class="inputUser" name="qntVendaProduto" required autocomplete="off">
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <label for="totalPedidoVenda" class="labelInput">Total do Pedido:</label>
+                <input type="number" id="totalPedidoVenda" class="inputUser" name="totalPedidoVenda" step="0.01" readonly>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <label for="descontoVenda" class="labelInput">Desconto:</label>
+                <input type="number" id="descontoVenda" class="inputUser" name="descontoVenda" step="0.01" autocomplete="off">
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <label for="totalPagoVenda" class="labelInput">Total Pago:</label>
+                <input type="number" id="totalPagoVenda" class="inputUser" name="totalPagoVenda" step="0.01" readonly>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <label for="formaPagVenda">Forma de Pagamento:</label>
+                <select id="formaPagVenda" name="formaPagVenda" required>
+                    <option value="CARTÃO">CARTÃO</option>
+                    <option value="DINHEIRO">DINHEIRO</option>
+                    <option value="PIX">PIX</option>
+                </select>
+            </div>
+            <br><br>
+            <br><br>
+            <div class="btn-container">
+                <button class="btn" type="submit">Salvar Venda</button>
+            </div>
         </div>
-
-        <div>
-            <label for="valVendaProduto">Valor de Venda:</label>
-            <input type="text" id="valVendaProduto" name="valVendaProduto" step="0.01" readonly>
-        </div>
-        
-        <div>
-            <label for="qntVendaProduto">Quantidade:</label>
-            <input type="number" id="qntVendaProduto" name="qntVendaProduto" required autocomplete="off">
-        </div>
-
-        <div>
-            <label for="totalPedidoVenda">Total do Pedido:</label>
-            <input type="number" id="totalPedidoVenda" name="totalPedidoVenda" step="0.01" readonly>
-        </div>
-
-        <div>
-            <label for="descontoVenda">Desconto:</label>
-            <input type="number" id="descontoVenda" name="descontoVenda" step="0.01" autocomplete="off">
-        </div>
-
-        <div>
-            <label for="totalPagoVenda">Total Pago:</label>
-            <input type="number" id="totalPagoVenda" name="totalPagoVenda" step="0.01" readonly>
-        </div>
-
-        <div>
-            <label for="formaPagVenda">Forma de Pagamento:</label>
-            <select id="formaPagVenda" name="formaPagVenda" required>
-                <option value="CARTÃO">CARTÃO</option>
-                <option value="DINHEIRO">DINHEIRO</option>
-                <option value="PIX">PIX</option>
-            </select>
-        </div>
-
-        <button type="submit">Salvar Venda</button>
     </form>
 
     <!-- Script para preencher automaticamente os campos -->
