@@ -33,18 +33,20 @@
     position: relative;
     background: none;
     border: 0.1em solid;
-    padding: 0.5em 10em;
+    padding: 0.5em 9em;
     margin: 0.5em;
     font-size: 1.0em;
     cursor: pointer;
     border-radius: 30px;
     outline: 0;
     &:hover {
-      background-color: rgb(36, 36, 117);
-      color: white;
-      border-color: white;
+      background-color: #14274E;
+      color: #E0E0E0;
+      border-color: #14274E;
+
     }
   }
+
 .btn-container {
     display: flex;
     align-items: center;

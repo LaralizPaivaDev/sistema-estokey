@@ -9,9 +9,9 @@
 
 <header>
     <h1>LISTA: VENDAS</h1>    
-    <div>
-        <a href="/" type="submit" id="botao-inicial"><button class="botao-inicial">Tela inicial</button></a>
-        <a href="/cadastroVenda" type="submit" id="cadastroProduto"><button class="botao-cadastrar-produto">Cadastro de Venda</button></a>
+    <div class="btn-container">
+        <a href="/" type="submit" id="botao-inicial"><button class="btn">Tela inicial</button></a>
+        <a href="/cadastroVenda" type="submit" id="cadastroProduto"><button class="btn">Cadastro de Venda</button></a>
     </div> 
 </header>
 
@@ -24,6 +24,7 @@
                 <th>Quantidade</th>             
                 <th>Total de Pagamento</th>
                 <th>Forma de Pagamento</th>
+                <th>Opções</th>
             </tr>
         </thead>   
         <tbody>
@@ -35,7 +36,7 @@
                     <td>{{quantidade_venda_produto}}</td>
                     <td>{{total_pago_venda}}</td>
                     <td>{{forma_pag_venda}}</td>
-                    <td><a href="/deletarVenda/{{pk_venda}}" id="excluir"><button class="botao-excluir"><i class="fa-solid fa-trash-can"></i></button></a></td>
+                    <td class="opcao"><a href="/deletarVenda/{{pk_venda}}" id="excluir"><button class="botao-excluir"><i class="fa-solid fa-trash-can"></i></button></a></td>
                 </tr>
             {{/each}}            
         </tbody>

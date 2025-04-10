@@ -1,0 +1,65 @@
+.topo-tabela{
+    margin: 50px;
+}
+.topo-linha{
+    background-color: #f0f0f0;
+}
+
+.opcao{
+    display: flex;
+    margin: 10px;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+}
+
+.botao-excluir{
+    margin-right: 10px;
+    background-color: red;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+}
+
+.btn {
+    position: relative;
+    background: none;
+    border: 0.1em solid;
+    padding: 0.5em 9em;
+    margin: 0.5em;
+    font-size: 1.0em;
+    cursor: pointer;
+    border-radius: 30px;
+    outline: 0;
+    &:hover {
+      background-color: #14274E;
+      color: #E0E0E0;
+      border-color: #14274E;
+
+    }
+  }
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td {
+    text-align: center;
+    padding: 0.5em;
+}
+
+th{
+    text-align: center;
+    padding: 0.5em;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+tbody tr {
+    border-bottom: 5px solid #ccc;
+}
+
