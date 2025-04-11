@@ -4,20 +4,23 @@
 
     <!-- Chamar os arquivos externos -->
     <link rel="stylesheet" type="text/css" href="css/listagem_venda.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
 </head>
 
 <header>
-    <h1>LISTA: VENDAS</h1>    
-    <div class="btn-container">
-        <a href="/" type="submit" id="botao-inicial"><button class="btn">Tela inicial</button></a>
-        <a href="/cadastroVenda" type="submit" id="cadastroProduto"><button class="btn">Cadastro de Venda</button></a>
-    </div> 
+    <h1 class="bungee-regular">LISTA DE VENDAS</h1>    
 </header>
+    <div class="btn-container">
+        <a href="/" type="submit" id="botao-inicial"><button class="btn bungee-regular">Tela inicial</button></a>
+        <a href="/cadastroVenda" type="submit" id="cadastroProduto"><button class="btn bungee-regular">Cadastro de Venda</button></a>
+    </div> 
 
     <table class="topo-tabela">
          <thead>
-            <tr class="topo-linha">
+            <tr class="topo-linha montserrat-font">
                 <th>Data da Venda</th>
                 <th>Produto</th>
                 <th>Valor da venda (Bruto) </th>
@@ -27,7 +30,7 @@
                 <th>Opções</th>
             </tr>
         </thead>   
-        <tbody>
+        <tbody class="open-sans-font">
             {{#each posts}}
                 <tr>
                     <td>{{data_venda}}</td>
