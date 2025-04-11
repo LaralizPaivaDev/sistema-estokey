@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 8083;
+const port = process.env.PORT || 8080;
 const { engine } = require("express-handlebars");
 const Produto = require("./DAO/produto");
 const Venda = require("./DAO/venda");
