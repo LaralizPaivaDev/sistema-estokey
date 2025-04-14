@@ -22,38 +22,38 @@
     <div class="box">
     <form action="/tbl_venda" method="POST">
             <h1 class="bungee-regular">Cadastro de Venda</h1>
-
+            <br><br>
             <div class="inputBox">
                 <label for="descProduto" class="labelInput montserrat-font">Produto:</label>
                 <input type="text" id="descProduto" class="inputUser open-sans-font" name="descProduto" list="produtos" placeholder="Digite o nome do produto" required autocomplete="off">
                 <datalist id="produtos"></datalist>
             </div>
-            <br>
+            <br><br>
             <div class="inputBox">
                 <label for="valVendaProduto" class="labelInput montserrat-font">Valor de Venda:</label>
                 <input type="text" id="valVendaProduto" class="inputUser open-sans-font" name="valVendaProduto" step="0.01" readonly>
             </div>
-            <br>
+            <br><br>
             <div class="inputBox">
                 <label for="qntVendaProduto" class="labelInput montserrat-font">Quantidade:</label>
                 <input type="number" id="qntVendaProduto" class="inputUser open-sans-font" name="qntVendaProduto" required autocomplete="off">
             </div>
-            <br>
+            <br><br>
             <div class="inputBox">
                 <label for="totalPedidoVenda" class="labelInput montserrat-font">Total do Pedido:</label>
                 <input type="number" id="totalPedidoVenda" class="inputUser open-sans-font" name="totalPedidoVenda" step="0.01" readonly>
             </div>
-            <br>
+            <br><br>
             <div class="inputBox">
                 <label for="descontoVenda" class="labelInput montserrat-font">Desconto:</label>
                 <input type="number" id="descontoVenda" class="inputUser open-sans-font" name="descontoVenda" step="0.01" autocomplete="off">
             </div>
-            <br>
+            <br><br>
             <div class="inputBox">
                 <label for="totalPagoVenda" class="labelInput montserrat-font">Total Pago:</label>
                 <input type="number" id="totalPagoVenda" class="inputUser open-sans-font" name="totalPagoVenda" step="0.01" readonly>
             </div>
-            <br>
+            <br><br>
             <div class="inputBox montserrat-font">
                 <label for="formaPagVenda">Forma de Pagamento:</label>
                 <select id="formaPagVenda" name="formaPagVenda" class="inputSelect open-sans-font" required>
@@ -62,6 +62,7 @@
                     <option value="PIX">PIX</option>
                 </select>
             </div>
+            <br><br>
             <br>
             <div class="btn-container">
                 <button class="btn bungee-regular" type="submit">Salvar Venda</button>
