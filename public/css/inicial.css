@@ -1,5 +1,73 @@
-.bungee-regular {
-    font-family: "Bungee", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Comic Neue', cursive; 
+   background: linear-gradient(#14274e, #86a7b0, #4a4a4a);
+
+    
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+body{
+    width: 100vw;
+    height: 100vw;
+    scroll-behavior: smooth;
+    position: relative;
+    overflow: hidden;
+    height: 100vw;  
+    background-image: url('../image/logo_carla_irmaos_games_fundo_branco.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: auto 100vh;
+  
+
+}
+
+.menu {
+    display: flex;
+    width: 0;
+    height: 0;
+    flex-direction: column;
+    padding-top: 20px;
+    position: fixed; 
+    margin-right: 20%;
+    margin-top: 2%;
+    top: 0;
+    right: 8%;
+    gap: 8rem;
+    direction: none;
+}
+.menu ul{
+    display: inline-block;
+    transition: all .7s ease-in-out;
+}
+
+.menu ul:hover{
+    transform: translateY(-5px);
+}
+
+.a{
+    text-decoration: none;
+}
+
+.bungee-regular{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 22px;
+    width: 215px;
+    height: 60px;
+    font-family: 'Comic Neue';  
+    white-space: nowrap;
+    padding: 15px 20px;
+
 }
