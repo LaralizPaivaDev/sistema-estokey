@@ -1,6 +1,11 @@
+body{
+    background: linear-gradient(#14274E, #86a7b0, #4a4a4a);
+}
+
 .btn {
     position: relative;
     background: none;
+    color: #E0E0E0;
     border: 0.1em solid;
     padding: 0.5em 9em;
     margin: 0.5em;
@@ -30,7 +35,7 @@
     height: 100vh;
     /* background-color: #E0E0E0; */
     border-radius: 10px ;
-    box-shadow: 0 0 15px 15px rgba(94, 94, 94, 0.3);
+    box-shadow: 0 0 15px 15px rgba(110, 110, 110, 0.3);
 }
 
 .labelInput {
@@ -51,6 +56,7 @@
     font-family: "Bungee", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #E0E0E0;
 }
 
 .montserrat-font {
