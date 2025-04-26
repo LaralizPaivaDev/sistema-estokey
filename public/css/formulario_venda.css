@@ -20,10 +20,12 @@ body{
     cursor: pointer;
     border-radius: 30px;
     outline: 0;
+    transition: all .7s ease-in-out;
     &:hover {
-      background-color: #14274E;
-      color: #E0E0E0;
-      border-color: #14274E;
+        transform: translateY(-5px);
+        background-color: #14274E;
+        color: #E0E0E0;
+        border-color: #14274E;
 
     }
   }
