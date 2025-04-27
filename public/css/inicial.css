@@ -33,13 +33,13 @@ body{
     width: 0;
     height: 0;
     flex-direction: column;
-    padding-top: 20px;
+    padding-top: 35px;
     position: fixed; 
     margin-right: 20%;
     margin-top: 2%;
     top: 0;
     right: 8%;
-    gap: 8rem;
+    gap: 5rem;
     direction: none;
 }
 
@@ -52,16 +52,12 @@ body{
     transform: translateY(-5px);
 }
 
-.a{
-    text-decoration: none;
-}
-
 .bungee-regular{
     display: flex;
     justify-content: center;
     cursor: pointer;
     font-size: 22px;
-    width: 215px;
+    width: 250px;
     height: 60px;
     font-family: 'Comic Neue';  
     white-space: nowrap;
