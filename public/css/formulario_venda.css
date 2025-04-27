@@ -1,14 +1,18 @@
+body{
+    background: linear-gradient(#14274E, #86a7b0, #4a4a4a);
+}
+
 .formVenda {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin: 10em; */
-    /* height:100vh; */
+    
 }
 
 .btn {
     position: relative;
     background: none;
+    color: #E0E0E0;
     border: 0.1em solid;
     padding: 0.5em 9em;
     margin: 0.5em;
@@ -16,10 +20,12 @@
     cursor: pointer;
     border-radius: 30px;
     outline: 0;
+    transition: all .7s ease-in-out;
     &:hover {
-      background-color: #14274E;
-      color: #E0E0E0;
-      border-color: #14274E;
+        transform: translateY(-5px);
+        background-color: #14274E;
+        color: #E0E0E0;
+        border-color: #14274E;
 
     }
   }
@@ -34,11 +40,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5em;
+    padding: 8%;
+    margin: 10%;    
     height: 100vh;
     /* background-color: #E0E0E0; */
     border-radius: 10px ;
-    box-shadow: 0 0 15px 15px rgba(94, 94, 94, 0.3);
+    box-shadow: 0 0 15px 15px rgba(110, 110, 110, 0.3);
 }
 
 .labelInput { 
@@ -64,6 +71,7 @@
     font-family: "Bungee", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #E0E0E0;
 }
 
 .montserrat-font {
