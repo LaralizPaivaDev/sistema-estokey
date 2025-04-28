@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(#14274E, #86a7b0, #4a4a4a);
+    background: rgb(250, 248, 248);
 }
 
 .formVenda {
@@ -71,7 +71,7 @@ body{
     font-family: "Bungee", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: #E0E0E0;
+    color: black;
 }
 
 .montserrat-font {
