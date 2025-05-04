@@ -7,7 +7,7 @@ const { engine } = require("express-handlebars");
 const Produto = require("./DAO/produto");
 const Venda = require("./DAO/venda");
 const { Op } = require("sequelize");
-const methodOverride = require("method-override");
+const methodOverride = require("method-override"); 
 
 // Template de engine
 app.engine(
