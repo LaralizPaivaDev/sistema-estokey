@@ -4,7 +4,7 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
-   font-family: 'Comic Neue', cursive; 
+   font-family:  "Bungee", sans-serif, cursive; 
    background: white;
     
 }
@@ -59,7 +59,7 @@ body{
     font-size: 22px;
     width: 250px;
     height: 60px;
-    font-family: 'Comic Neue';  
+    font-family:  "Bungee", sans-serif;  
     white-space: nowrap;
     padding: 15px 20px;
 
